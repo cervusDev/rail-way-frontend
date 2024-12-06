@@ -1,21 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import localFont from "next/font/local";
-import styles from "@/styles/Home.module.css";
 import { Animation } from "./template/Animation";
 import { Refresh } from "./template/Refresh";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function Home() {
   const [count, setCount] = React.useState(0)
@@ -27,14 +13,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <main className={styles.main}>
-          <Refresh onClick={() => setCount(count + 1)} />
-          <Animation key={count} />
-        </main>
-      </div>
+      <main>
+        <Animation key={0} />
+      </main>
+
     </>
   );
 }
